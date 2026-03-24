@@ -36,7 +36,8 @@ jobs:
       - uses: docker/metadata-action@v5
         id: meta
         with:
-          images: ghcr.io/dowyang9/codex-proxy
+          # 修改这里：使用变量而不是写死名字
+          images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest
             type=raw,value=v${{ steps.version.outputs.version }}
